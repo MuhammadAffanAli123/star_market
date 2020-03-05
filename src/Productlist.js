@@ -11,21 +11,28 @@ import Productcard from './Productcard';
     render() {
         return (
             <div>
-            <Title head1="Our" head2="Products" />
+            {/* <Title head1="Our" head2="Products" /> */}
                 <ProductConsumer>
                     {
                         (value)=>
                             {
                             return(
-                                
                                 <div>
-                                    {console.log(value.product)}
-                   <Productcard productscard={value.product}/>
-                                </div>
+                                    {
+                                        value.product.map((item)=>{
+                                            return(
+                                                <div key={item.id}>
+                                                    {
+<Productcard itempass={item}/>                                                    }
+                                                    </div>
+                                            )
+                                        })
+                                    }
+                                   </div> 
                             )
-                        }
 
                     }
+                }
                 </ProductConsumer>
             </div>
         )

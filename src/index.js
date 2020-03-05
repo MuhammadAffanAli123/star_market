@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-
+import Productcard from './Productcard'
 import ProductProvider from './Contaxt'
 import {
   BrowserRouter as Router,

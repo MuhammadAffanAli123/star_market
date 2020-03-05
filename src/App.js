@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Nav from './Nav';
+import Detail from './Detail'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,8 +19,8 @@ class App extends Component {
 
         <Switch>
 
-          <Route path="/" component={Productlist}/>
-            {/* <Route path="/detail" component={Detail}/> */}
+          <Route exact path="/" component={Productlist}/>
+            <Route exact path="/detail" component={Detail}/> 
           
         </Switch>
       </div>

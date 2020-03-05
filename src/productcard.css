@@ -8,8 +8,8 @@
 } 
 
 .maincard:hover{
-  transform: scale(0.8); 
-  transition-duration: 2s; 
+  transform:scale(1.1); 
+  transition-duration: 1s; 
 }
 .maincard{
     transition: 2s;
