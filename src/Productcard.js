@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './productcard.css'
 import {ProductConsumer} from './Contaxt';
+import Button from 'react-bootstrap/Button';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee,faShoppingCart } from '@fortawesome/free-solid-svg-icons'
@@ -8,32 +9,37 @@ import { Link } from 'react-router-dom'
 class Productcard extends Component {
     render() {
 
-const {id,title,img,price,incart}=this.props.itempass
+// const {id,title,img,price,incart}=this.props.itempass
         return (
-<div className="container">
-    
-    <div className="row">
+
+
         <ProductConsumer>
-            {(value)=>(<div  style={{overflow:"hidden",border:"2px solid",marginTop:"3%",backgroundColor:"white",marginLeft:"5%"}}  className="col-sm-6 col-lg-3 maincard">                        
-                <Link to="/detail">
-                    <div  >
-                <img onClick={
-                    ()=>{
-               console.log( value.handleproduct(this.props.itempass.id))}}                
-                 className="cardimg"  src={img} />
             
-            </div></Link>
-    <button style={{marginLeft:"90%"}} disabled={incart?true:false}>{incart?("in cart"):(<FontAwesomeIcon icon={faShoppingCart}/>)}</button>
- <br/>       <p style={{display:"inline",fontFamily: 'Lacquer',fontSize:"203%"}} >{this.props.itempass.title}</p><span style={{marginLeft:"64%"}}>{price}$</span>
-
-            </div>)}
+            {(value)=>(
+            
+            <Link  to="/detail">
+            <div  onClick={
+                    ()=>{
+               console.log( value.handleproduct(this.props.itempass.id))}}    >                        
+               
+                    <div  >
+                <img               
+                 className="cardimg"  src={this.props.itempass.img} />
+            
+            </div>
+    <Button  style={{width:"100%",marginTop:"3%",textAlign:"center"}} onClick={
+        ()=>{console.log(value.addcart(this.props.itempass.id)),
+              console.log(value.modal(this.props.itempass.id,"modall"))
+        
+    }}
     
+    disabled={this.props.itempass.incart?true:false}>{this.props.itempass.incart?"in cart":<FontAwesomeIcon icon={faShoppingCart}/>}</Button>
+ <br/>    <p style={{fontFamily: 'italice',color:"black",fontSize:"150%"}} ><span style={{fontWeight:"bold"}}>Name: </span>{this.props.itempass.title}</p>
+ <p style={{color:"black",fontSize:"160%",fontWeight:"bold  "}}><span >$</span>{this.props.itempass.price}</p>
+
+            </div></Link>)}
             </ProductConsumer>
-    </div>
-    
-</div>
-
-            )
+      )
                 }
             }
     

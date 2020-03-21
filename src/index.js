@@ -4,6 +4,9 @@ import App from './App';
 import './index.css';
 import Productcard from './Productcard'
 import ProductProvider from './Contaxt'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import {
   BrowserRouter as Router,
   Switch,
