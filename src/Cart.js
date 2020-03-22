@@ -66,7 +66,7 @@ class Cart extends Component {
                        <div  className="col-10 col-lg-2">
                                 <button onClick={()=>{
                                     console.log(value.cartcalincre(item.id), console.log(value.gtotal()))
-                                }} style={{height:"50px",background:"transparent",border:"2px  solid"}}>-</button><span style={{fontSize:"200%",marginTop:"70%"}}>{item.count}</span>
+                                }} style={{height:"50px",background:"transparent",border:"2px  solid"}}>+</button><span style={{fontSize:"200%",marginTop:"70%"}}>{item.count}</span>
                        
                        <button onClick={()=>{
                                     console.log(value.cartcaldecrem(item.id), console.log(value.gtotal()))
