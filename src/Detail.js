@@ -50,7 +50,7 @@ class Detail extends Component {
                              
                     <Button variant="success" style={{width:"30%",height:"90%",fontWeight:"bold",fontSize:"140%"}} disabled={incart?true:false}  onClick={()=>{
                         console.log(value.modal(id)),console.log(value.addcart(id))
-                    }}>{incart?"add to cart":"already purchased"}</Button>
+                    }}>{incart?"already purchased":"add to cart"}</Button>
                              </div>
                          </div>
                      
